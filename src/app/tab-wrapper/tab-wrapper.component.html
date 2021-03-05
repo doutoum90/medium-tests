@@ -1,0 +1,9 @@
+<tabset>
+    <tab *ngFor="let tab of tabItems.items; let i=index">
+      <ng-template tabHeading>
+        <ng-container *ngTemplateOutlet="tab.headerTemplate"></ng-container>
+      </ng-template>
+     
+      <ng-container *ngTemplateOutlet="tab.template"></ng-container>
+    </tab>
+</tabset>

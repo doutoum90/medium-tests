@@ -3,25 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TabsItemsDirective } from './tabs-items.directive';
-import { TabsItemDirective } from './tab-item.directive';
-import { TabWrapperComponent } from './tab-wrapper/tab-wrapper.component';
 
-import { AlertModule } from 'ngx-bootstrap/alert';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TodosComponent } from './components/todos/todos.component';
+import { TabWrapperComponent } from './components/tab-wrapper/tab-wrapper.component';
+import { TabsItemDirective } from './directives/tab-item.directive';
+import { TabsItemsDirective } from './directives/tabs-items.directive';
+import { BindQueryParamDirective } from './directives/bind-query-param.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TabWrapperComponent,
+    TodosComponent,
     TabsItemsDirective,
     TabsItemDirective,
-    TabWrapperComponent
+    BindQueryParamDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    AlertModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     TabsModule.forRoot()
   ],
   providers: [],

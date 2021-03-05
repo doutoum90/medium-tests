@@ -1,5 +1,5 @@
 import { Component, ContentChild, OnInit } from '@angular/core';
-import { TabsItemsDirective } from '../tabs-items.directive';
+import { TabsItemsDirective } from '../../directives/tabs-items.directive';
 
 @Component({
   selector: 'app-tab-wrapper',

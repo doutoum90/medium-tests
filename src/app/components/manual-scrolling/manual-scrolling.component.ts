@@ -39,7 +39,7 @@ export class ManualScrollingComponent implements OnInit, AfterViewChecked {
     const end = start + length;
     for (let n = start; n <= end; n++) {
       this.itemsContainer.createEmbeddedView(this.itemsRef, {
-        item: pers[n-this.persons.length],
+        item: pers[n-pers.length],
         isEven: n % 2 === 0
       });
     }

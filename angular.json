@@ -20,6 +20,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "faker"
+            ],
             "outputPath": "dist/medium",
             "index": "src/index.html",
             "main": "src/main.ts",

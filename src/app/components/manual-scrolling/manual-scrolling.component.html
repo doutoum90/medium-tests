@@ -1,0 +1,64 @@
+<table>
+    <thead>
+        <td>Name</td>
+        <td>Bio</td>
+        <td>Avatar</td>
+        <td>Supprimer</td>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let item of persons; let isEven = even" #blockItemsContainer>
+            <ng-container *ngTemplateOutlet="blockItem, context: {item : item, isEven: isEven}">
+
+            </ng-container>
+        </ng-container>
+      </tbody>
+</table>
+
+
+<ng-template #blockItem let-item="item" let-isEven="isEven">
+
+    <tr class="h-12"
+        [class.bg-gray-400]="isEven"
+        [class.bg-gray-500]="!isEven">
+        <td><span class="py-2 px-4">{{ item.name }}</span></td>
+        <td><span>{{ item.bio }}</span></td>
+        <td><img style="height: 50px; width:50px;" [src]="item.avatar" alt="Avatar"></td>
+    
+        <td>
+            <a>
+                <button class="py-2 px-4 rounded" (click)="remove(item)">x</button>
+            </a>
+        </td>
+    </tr>
+</ng-template>
+
+
+<hr>
+
+
+<table>
+	<thead>
+		<td>Name</td>
+		<td>Bio</td>
+		<td>Avatar</td>
+		<td>Supprimer</td>
+	</thead>
+	<tbody>
+		<ng-container #itemsContainer></ng-container>
+	</tbody>
+</table>
+<ng-template #itemsRef let-item="item" let-isEven="isEven">
+    <tr class="h-12"
+        [class.bg-gray-400]="isEven"
+        [class.bg-gray-500]="!isEven">
+        <td><span class="py-2 px-4">{{ item.name }}</span></td>
+        <td><span>{{ item.bio }}</span></td>
+        <td><img style="height: 50px; width:50px;" [src]="item.avatar" alt="Avatar"></td>
+    
+        <td>
+            <a>
+                <button class="py-2 px-4 rounded" (click)="remove(item)">x</button>
+            </a>
+        </td>
+    </tr>
+</ng-template>

@@ -11,8 +11,8 @@ export class BindQueryParamDirective implements OnInit {
   ngOnInit() {
     if (location.search) {
       const queryParams = new URLSearchParams(location.search);
-      const value = Object.fromEntries(queryParams.entries());
-      this.ngControl.control?.patchValue(value);
+      // const value = Object.fromEntries(queryParams.entries());
+      // this.ngControl.control?.patchValue(value);
     }
   }
 

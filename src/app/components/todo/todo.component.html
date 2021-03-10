@@ -1,0 +1,16 @@
+<table width="100%">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos">
+          <td>{{todo.id}}</td>
+          <td>{{todo.name}}</td>
+          <td>{{todo.completed}}</td>
+        </tr>
+    </tbody>
+</table>

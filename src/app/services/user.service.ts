@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as faker from 'faker';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,15 @@ export class UserService {
           database: faker.database.type
         }
       })
+  }
+
+  getUsersWithParams(params:any, numbers = 10) {
+    return of(Array(numbers).fill(0).map(()  =>  { 
+		return {
+			id: faker.name.lastName(),
+			firstName: faker.name.findName(),
+			lastName: faker.name.findName(),
+		}
+      }));
   }
 }

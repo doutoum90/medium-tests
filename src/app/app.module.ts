@@ -19,10 +19,11 @@ import { VirtualScrollingComponent } from './components/virtual-scrolling/virtua
 import { ManualScrollingComponent } from './components/manual-scrolling/manual-scrolling.component';
 import { ProgressiveScrollingComponent } from './components/progressive-scrolling/progressive-scrolling.component';
 import { TodoComponent } from './components/todo/todo.component';
-import { TodoService } from './services/todo.service';
 import { Observable, of } from 'rxjs';
-import { TodosModel, TodosModel2 } from './models/todos.model';
+import { TodosModel2 } from './models/todos.model';
 import { HttpClientModule } from '@angular/common/http';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { DataTablesModule } from 'angular-datatables';
 
 export class TodoServiceMock {
   get(): Observable<TodosModel2[]> {
@@ -51,7 +52,8 @@ const todos: TodosModel2[]= [
     VirtualScrollingComponent,
     ManualScrollingComponent,
     ProgressiveScrollingComponent,
-    TodoComponent
+    TodoComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,7 @@ const todos: TodosModel2[]= [
     HttpClientModule,
     ReactiveFormsModule,
     ScrollingModule,
+    DataTablesModule,
     TabsModule.forRoot()
   ],
   providers: [
